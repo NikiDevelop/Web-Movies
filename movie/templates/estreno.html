@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container" style="margin-top: 5%;">
+  <div class="col-md-8">
+  <h1>Películas próximamente en cartelera</h1>  
+  </div>
+  {% if estreno %}
+    <ul>
+      {% for estrenos in estreno %}
+      <p> <strong>{{ estrenos.fecha_estreno|date:"d/m/y" }}</strong></p>
+        <li>{{ estrenos.titulo }} - </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay películas próximamente en cartelera</p>
+
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

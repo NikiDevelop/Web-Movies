@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Géneros de películas</h1>
+    {% for genero in generos %}
+      <section>
+        <h2>{{ genero.nombre }}</h2>
+        <ul>
+          {% for pelicula in genero.pelicula_set.all %}
+            <li>{{ pelicula.titulo }}</li>
+          {% empty %}
+            <li>No hay películas en este género</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  </div>
+{% endblock %}
