@@ -8,7 +8,7 @@ from .models import Genero
 
 urlpatterns = [
     
-    path('home', views.home, name="Home"),
+    path('', views.home, name="Home"),
     
     path('pelicula/<int:pelicula_id>/', views.pelicula_detail, name='pelicula_detail'),
     path('genero/', views.generos, name='genero'),
