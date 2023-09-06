@@ -1,6 +1,0 @@
-{
-    "typescript.experimental.tsserver.web.enableProjectWideIntellisense": true,
-    "typescript.enablePromptUseWorkspaceTsdk": true,
-    "typescript.disableAutomaticTypeAcquisition": true,
-    "terminal.integrated.shellIntegration.suggestEnabled": true
-}
