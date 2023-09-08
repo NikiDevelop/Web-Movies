@@ -28,7 +28,7 @@ def peliculas(request):
 
         
 def pelicula_detail(request, pelicula_id):
-    pelicula = get_object_or_404(Pelicula, pk=pelicula_id)
+    pelicula = Pelicula.objects.get(pk=pelicula_id)
     return render(request, 'pelicula_detail.html', {'pelicula': pelicula})
 
 def generos(request):
