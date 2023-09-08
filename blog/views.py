@@ -1,11 +1,28 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post
+from django.db.models import Q
 
 
 def renderPosts(request):
-    total_posts = Post.objects.count()
+
+    """
+    Traemos los posts que están ordenados de más recientes a antiguos.
+    Hacemos una filtración de los posts mediante búsqueda de título o fecha en la barra de búsqueda que 
+    hemos creado en base.html 
+    
+    """    
     posts = Post.objects.order_by("-date")
-    return render(request, "blog.html", {"posts": posts, "total_posts": total_posts})
+
+    if "buscar" in request.GET:
+        queryset = request.GET.get("buscar")
+        if queryset:                        
+            posts = Post.objects.filter(
+                Q(title__icontains = queryset) | 
+                Q(date__icontains = queryset)                 
+                
+            ).distinct()
+
+    return render(request, "blog.html", {"posts": posts})
 
 
 def post_detail(request, post_id):

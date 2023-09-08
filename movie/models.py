@@ -4,6 +4,8 @@ from django.db import models
 from django.db.models.fields import CharField, DateField, URLField
 from django.db.models.fields.files import ImageField
 from datetime import date
+from ckeditor.fields import RichTextField
+
 
 
 
@@ -11,13 +13,18 @@ from datetime import date
 class Genero(models.Model):
     nombre = models.CharField(max_length=100)
 
+
+    class Meta:
+        verbose_name = 'Genero'
+        verbose_name_plural = 'Generos'
+
     def __str__(self):
         return self.nombre
     
 
 class Pelicula(models.Model):
     titulo = CharField(max_length=100)
-    descripcion = models.TextField()
+    descripcion = RichTextField()
     imagen = ImageField(upload_to="movie/images")
     genero = models.ManyToManyField(Genero)
     duracion = CharField(max_length=10)
@@ -27,6 +34,12 @@ class Pelicula(models.Model):
     fecha = DateField(default=date.today)
     director = CharField(max_length=50)
     reparto = models.TextField()
+
+
+    class Meta:
+        verbose_name = 'Pelicula'
+        verbose_name_plural = 'Peliculas'
+        ordering = ['titulo']
 
     def __str__(self) -> str:
         return self.titulo

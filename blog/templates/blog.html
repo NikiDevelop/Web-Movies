@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h2 class="fs-2" style="text-align: center; margin-left: -38%; margin-top: 5%; margin-bottom: 5%; color: rgb(35, 41, 44)">Artículos</h2>
-
+<h2 class=" text-left text-white d-none d-lg-block"style="font-size: 25px; text-align: center;color: #cfcfcf; margin-top:3%;" > Artículos </h2>
+<div class="footer-divider" style="width:41.6%; margin: 0 auto"></div>
 {% for post in posts %}
-<div class="py-3">
-  <div class="card card-body" style="width:60%; margin: 0 auto; align-items: center; ">
+<div class="py-3" style="margin-top:2%">
+  <div class="card card-body" style="width:42%; margin: 0 auto; align-items: center; ">
       <div class="col-9" >
-        <h1 style="color: #2a2e2e;">{{post.title}}</h1>
-        <div class="footer-divider"></div>
+        <h2 style="color: #2a2e2e;">{{post.title}}</h1>
+        <div class="footer-divider" ></div>
         <p>{{post.description|striptags|truncatechars:100}}</p>
         <a href="{% url 'blog:post_detail' post.id %}" style="text-decoration: none; color:rgb(148, 147, 147)">Leer artículo...</a>
         <p>{{post.date|date:'M d Y'|upper}}</p>

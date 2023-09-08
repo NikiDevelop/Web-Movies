@@ -2,22 +2,20 @@
 
 {% load static %}
 
-
 {% block content %}
 
 
-
-<div class="row " style="width: 100%;  margin-top: 5%; padding: 5% 10%;">
+ 
+<h2 class=" text-left text-white d-none d-lg-block"style="font-size: 22px; text-align: center;color: #cfcfcf; margin-top:3%" > Galería de Películas </h2>
+<div class="footer-divider" style="width:50%; margin: 0 auto"></div>
+<div class="row " style="width: 100%; padding: 5% 10%; margin: 3% 3% 3% 3%">
 {% for pelicula in peliculas %}
 <div class="col-md-3" style="margin: 0 auto;">
   <div class="card " style="width: 69%; height:100%; border-radius: 20px; ">
       <img src="{{pelicula.imagen.url }}" class="img-fluid " style="border-radius: 20px; width: 300px; height: 350px; margin: 0 auto;">
       <div class="card-body col-md-12 float-md-left blog-thumbnail" style="text-align: center;">    
-
       <a href="" class="card-title"style="text-align: center; color:black; text-decoration: none; ">{{ pelicula.titulo|truncatechars:100 }}</a>
   </div>
-  
-  
   <div class="card-text" style=" align-items: center;">                  
     <a href="{{pelicula.url}}" class="btn " target="__blank"
     style="text-align: center; border-radius: 20px;   color: #787575;
@@ -29,7 +27,7 @@
   <a href="{% url 'pelicula_detail' pelicula.id %}" style="color: rgb(148, 147, 147); margin-right: 1.1rem; ">Leer más...</a>     
 </div> 
   </div>
-  </div><!--card que se cierra-->
+  </div>
 {% endfor %}
 {% endblock %}
 </div>

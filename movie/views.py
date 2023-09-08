@@ -3,16 +3,24 @@ from .models import Pelicula, Estreno, Genero
 from django.db.models import Q
 
 def home(request):
+    """
+    Esta parte es igual que en el blog, traemos todas las películas y hacemos un filtrado de búsqueda
+    en el que podemos buscar por: título, género, fecha, rate, duración y director, en la barra de búsqueda
+    todo esto lo devolvemos en el archivo home.html
+
+    """
     peliculas = Pelicula.objects.all()
     if "buscar" in request.GET:        
-        queryset = request.GET.get("buscar")
-        
+        queryset = request.GET.get("buscar")     
         if queryset:                        
             peliculas = Pelicula.objects.filter(
                 Q(titulo__icontains = queryset) |               
-                Q(genero__icontains = queryset) |
-                Q(fecha__icontains = queryset)|
-                Q(rate__icontains = queryset)
+                Q(genero__nombre__icontains = queryset) |
+                Q(fecha__icontains = queryset) |
+                Q(rate__icontains = queryset) |
+                Q(duracion__icontains = queryset) |
+                Q(director__icontains = queryset)
+                 
                 
             ).distinct()
     
