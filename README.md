@@ -2,9 +2,7 @@
 Proyecto en Django Web de películas con deploy en Azure
 ----------------------------------------------------------
 
-Lo primero
-
-Creamos un entorno virtual.
+Lo primero creamos un entorno virtual.
 
 ```
 $ python -m venv env
