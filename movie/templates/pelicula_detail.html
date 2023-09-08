@@ -8,7 +8,11 @@
         <img src="{{ pelicula.imagen.url }}" alt="{{ pelicula.titulo }}" class="img-fluid">
       </div>
       <div class="col-md-8">
+<<<<<<< HEAD
         <h2 style="color: black; font: bold;">{{ pelicula.titulo }}</h2>
+=======
+        <h2 style="color: #1e1f26; font: bold;">{{ pelicula.titulo }}</h2>
+>>>>>>> a19bc04ced384d917d11615de23eb5652b5fb71b
         <p><strong>Director:</strong> {{ pelicula.director }}</p>
         <p><strong>Reparto:</strong> {{ pelicula.reparto }}</p>
         <p><strong>Año:</strong> {{ pelicula.fecha }}</p>
@@ -18,8 +22,7 @@
             {% for genero in pelicula.genero.all %}
               {{ genero.nombre }}
               {% if not forloop.last %}, {% endif %}
-            {% endfor %}
-          </p>
+            {% endfor %}          
         </p>
         <p><strong>Sinopsis:</strong>{{ pelicula.descripcion }}</p>
         <div class="card-text" style=" align-items: center;">                  
