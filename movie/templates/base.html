@@ -23,7 +23,7 @@
 
 <body>
  <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" >
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="background-color: #244d61" >
     <div class="container">
       <div>
       <h2 class=" text-left text-white d-none d-lg-block" >              
@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item {% if request.path == '/home' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}" >Inicio</a>
           </li> 
           <!-- <li class="nav-item {% if request.path == '/blog/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'blog:posts' %}">Películas</a>
@@ -48,7 +48,7 @@
             <a class="nav-link text-uppercase text-expanded" href="{% url 'estreno' %}">Estrenos</a>
           </li>  -->      
           <li class="nav-item {% if request.path == '/blog/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'blog:posts' %}">Blog</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'blog:posts' %}" >Blog</a>
           </li>
         </ul>
       </div>     
@@ -63,6 +63,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <a class="ir-arriba  fa fa-chevron-circle-up" style="font-size:36px; margin-bottom: 3%; color:rgb(105, 4, 4); margin-right: 1%;" ></a>
 
+    <div style="float: right;"> 
     <script>
           $(document).ready(function(){
 
@@ -87,5 +88,6 @@
           });
 
     </script>
+  </div>
 </body>
 </html>
