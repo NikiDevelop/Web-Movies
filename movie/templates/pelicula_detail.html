@@ -14,15 +14,11 @@
         <p><strong>Año:</strong> {{ pelicula.fecha }}</p>
         <p><strong>Duración:</strong> {{ pelicula.duracion }}</p>
         <p><strong>IMDb:</strong><i class="fa fa-star" style="color:rgb(255,165,0)"></i> {{ pelicula.rate }}</p>
-        <p><strong>Géneros:</strong> 
-          {% if generos %}
-            {% for genero in generos %}
+        <p><strong>Géneros:</strong>           
+            {% for genero in pelicula.genero.all %}
               {{ genero.nombre }}
               {% if not forloop.last %}, {% endif %}
-            {% endfor %}
-          {% else %}
-            No se han asignado géneros a esta película.
-          {% endif %}
+            {% endfor %}          
         </p>
         <p><strong>Sinopsis:</strong>{{ pelicula.descripcion }}</p>
         <div class="card-text" style=" align-items: center;">                  
