@@ -1,5 +1,5 @@
 # Web-Movies
-Proyecto en Django Web de películas con deploy en Azure
+Proyecto en Django Web de películas 
 ----------------------------------------------------------
 
 Lo primero creamos un entorno virtual.
